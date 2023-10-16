@@ -1,7 +1,13 @@
-# pet-cats-node
-Applicação simples em Node.js e docker para uso em exemplos de projetos cloud.
+# App Pet Cats
 
-### Setup in Linux
+
+#### About
+
+Applicação simples em Node.js e docker para uso em exemplos de projetos cloud.  
+
+Um simples front-end para **Cat as a Service (CATAAS)**, uma API simples que fornece imagens de gatos. 
+
+#### Setup in Linux
 ``` bash
 
 # NODE.js
@@ -16,4 +22,10 @@ sudo npm install -g npm@10.2.0
 mkdir -p ~/app && cd ~/app
 npm init
 npm install --save express axios
+```
+
+#### Usage local
+``` bash
+cd ~/app
+node index.js
 ```
