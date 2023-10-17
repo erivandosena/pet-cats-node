@@ -1,6 +1,5 @@
 # App Pet Cats
 
-
 #### About
 
 Applicação simples em Node.js e docker para uso em exemplos de projetos cloud.  
@@ -29,3 +28,21 @@ npm install --save express axios
 cd ~/app
 node index.js
 ```
+
+#### Using Docker
+``` bash
+cd ~/app
+# Dev
+docker build --target development -t app-pet-cats-node:dev-release .
+docker run -it --rm --name app-pet -p 3000:3000 -v .:/opt/app -w /opt/app app-pet-cats-node:dev-release sh
+node index.js
+
+# Prod
+docker build --no-cache --target production -t erivando/app-pet-cats-node:latest .
+docker run -it --rm -d --name app-pet-cat -p 80:3000 erivando/app-pet-cats-node:latest
+docker exec -it app-pet-cat ls -la .
+docker logs -f app-pet-cat
+```
+
+#### Image Docker
+https://hub.docker.com/r/erivando/app-pet-cats-node
